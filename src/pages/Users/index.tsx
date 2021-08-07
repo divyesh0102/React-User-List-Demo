@@ -16,7 +16,7 @@ const UsersPage = (): JSX.Element => {
     }, []);
 
     const filterUsers = (user:User) => {
-        return ((user && user.name && user.name.includes(searchText)) || (user && user.email && user.email.includes(searchText)) || searchText.trim() === "");
+        return ((user && user.name && user.name.toLowerCase().includes(searchText.toLowerCase())) || (user && user.email && user.email.toLowerCase().includes(searchText.toLowerCase())) || searchText.trim() === "");
     }
 
     return (
